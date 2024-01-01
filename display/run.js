@@ -388,7 +388,17 @@ setInterval(()=>{
     });
 })
 
+let inversion = 0;
+let inverted = false;
+
 setInterval(()=>{
+    inversion++;
+    if(inversion === 4)
+    {
+        inversion = 0;
+        inverted = !inverted;
+        oled.invertDisplay(inverted);
+    }
     var status = "";
     if(statusLineCurrent>statusLn2.length-1)
     {
